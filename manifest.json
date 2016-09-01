@@ -18,11 +18,12 @@
 	],
 	"content_scripts": [{
 		"js": ["contentscript.js"],
+		"css": ["idownstyle.css"],
 		"matches": [
 			"*://www.instagram.com/*"
 		],
 		"run_at": "document_start",
 		"all_frames": true
 	}],
-	"web_accessible_resources": ["script.js", "style.css"]
+	"web_accessible_resources": ["script.js","idownstyle.css"]
 }

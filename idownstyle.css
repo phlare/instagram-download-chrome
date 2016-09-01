@@ -1,0 +1,23 @@
+a.iDownBtn, a.iDownBtn:visited {
+	position: absolute;
+	display: block;
+	right: 19px;
+	top: 40px;
+	padding: 2px 6px;
+	z-index: 4000;
+	color: #ffffff;
+	font-weight: 400;
+	background-color: #284529;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	text-decoration: none;
+}
+a.iDownBtn.profile {
+	top: 5px;
+	right: 5px;
+}
+a.iDownBtn:hover {
+	color: #ffffff;
+	background-color: #8AC09A;
+}
