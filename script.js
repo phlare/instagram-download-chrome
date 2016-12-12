@@ -29,7 +29,10 @@ var IDown = {
 
 		// these are subject to change, I imagine.  
 		// might want to find a more bulletproof way once it changes
-		if ($('main > article._42elc').length) {
+		if ($('video:not(.idowned):first').length) {
+			var ele = $('video:not(.idowned):first').first();
+			IDown.findVideoInElement(ele);
+		} else if ($('main > article._42elc').length) {
 			// user profile page
 			page = "profile";
 		} else if ($('main > section._jx516').length) {
@@ -40,7 +43,30 @@ var IDown = {
 		}
 		IDown.findImages(page);
 	},
+	// find video on popup or page and add button link 
+	findVideoInElement: function(ele) {
+		if (typeof ele === 'undefined') {
+			return false;
+		}
+		// add class so we don't try again for the same element
+		$(ele).addClass('idowned');
+		var videoUrl = $(ele).attr('src');
+		var insertPoint = $(ele).closest('article._j5hrx').find('div._80v0r');
+		
+		if (videoUrl.length) {
+			//TODO: refactor this to combine with the drawButton function
+			var button_html = '<a class="iDownBtn video" href="' + videoUrl + '" download>&#x25ba;</a>';
+			
+			$(button_html)
+				.on('click', function(event) {
+					event.stopPropagation();
+				})
+				.hide()
+				.fadeIn()
+				.insertAfter(insertPoint);
+		}
 
+	},
 	// find images on the page and add button links for download
 	findImages: function(page) {
 
