@@ -18,7 +18,7 @@ var IDown = {
 			// begin the inner interval looking for new images to add a download link to
 			IDown.detectInterval = setInterval(function() {
 				IDown.detectPage();
-			}, 500);
+			}, 125);
 
 		}, 250);
 	},
