@@ -35,6 +35,8 @@ var IDown = {
 		} else if ($('main > section._jx516').length) {
 			// feed page
 			page = "feed";
+		} else if ($('main > article._3n7ri').length) {
+			page = "hashtag";
 		}
 		IDown.findImages(page);
 	},
@@ -49,6 +51,7 @@ var IDown = {
 		// console.log('seeking images for page ' + page);
 		switch (page) {
 			case 'profile':
+			case 'hashtag':
 				$('a._8mlbc:not(.idowned):first').each(function(i) {
 					var self = this;
 					// mark as being tracked
