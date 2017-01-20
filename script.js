@@ -32,6 +32,9 @@ var IDown = {
 		if ($('video:not(.idowned):first').length) {
 			var ele = $('video:not(.idowned):first').first();
 			IDown.findVideoInElement(ele);
+		} else if ($('img._icyx7').length) {
+			var ele = $('img._icyx7:not(.idowned):first').first();
+			IDown.findImageInPopup(ele);
 		} else if ($('main > article._42elc').length) {
 			// user profile page
 			page = "profile";
@@ -42,6 +45,26 @@ var IDown = {
 			page = "hashtag";
 		}
 		IDown.findImages(page);
+	},
+	// find image on popup or page and add button link
+	findImageInPopup: function(ele) {
+		if (typeof ele === 'undefined') {
+			return false;
+		}
+		// add class so we don't try again
+		$(ele).addClass('idowned');
+		var img_src = $(ele).attr('src');
+
+		var button_class = "iDownBtn profile";
+		var insertPoint = $(ele).parent();
+		var button_html = '<a class="' + button_class + '" href="' + img_src + '" download>&#8681</a>';
+		$(button_html)
+			.on('click', function(event) {
+				event.stopPropagation();
+			})
+			.hide()
+			.fadeIn()
+			.insertAfter(insertPoint);
 	},
 	// find video on popup or page and add button link 
 	findVideoInElement: function(ele) {
