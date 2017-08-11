@@ -32,8 +32,8 @@ var IDown = {
 		if ($('video:not(.idowned):first').length) {
 			var ele = $('video:not(.idowned):first').first();
 			IDown.findVideoInElement(ele);
-		} else if ($('img._icyx7').length) {
-			var ele = $('img._icyx7:not(.idowned):first').first();
+		} else if ($('img._2di5p').length) {
+			var ele = $('img._2di5p:not(.idowned):first').first();
 			IDown.findImageInPopup(ele);
 		} else if ($('main > article._42elc').length) {
 			// user profile page
@@ -74,7 +74,7 @@ var IDown = {
 		// add class so we don't try again for the same element
 		$(ele).addClass('idowned');
 		var videoUrl = $(ele).attr('src');
-		var insertPoint = $(ele).closest('article').find('div._80v0r');
+		var insertPoint = $(ele).closest('article').find('div._4c5eh');
 		if (videoUrl.length) {
 			//TODO: refactor this to combine with the drawButton function
 			var button_html = '<a class="iDownBtn video" href="' + videoUrl + '" download>&#x25ba;</a>';
