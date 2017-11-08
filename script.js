@@ -74,7 +74,7 @@ var IDown = {
 		// add class so we don't try again for the same element
 		$(ele).addClass('idowned');
 		var videoUrl = $(ele).attr('src');
-		var insertPoint = $(ele).closest('article').find('div._4c5eh');
+		var insertPoint = $(ele).parent().parent();
 		if (videoUrl.length) {
 			//TODO: refactor this to combine with the drawButton function
 			var button_html = '<a class="iDownBtn video" href="' + videoUrl + '" download>&#x25ba;</a>';
