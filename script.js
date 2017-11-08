@@ -32,7 +32,7 @@ var IDown = {
 		if ($('video:not(.idowned):first').length) {
 			var ele = $('video:not(.idowned):first').first();
 			IDown.findVideoInElement(ele);
-		} else if ($('img._2di5p').length) {
+		} else if ($('img._2di5p:not(.idowned)').length) {
 			var ele = $('img._2di5p:not(.idowned):first').first();
 			IDown.findImageInPopup(ele);
 		} else if ($('main > article._42elc').length) {
@@ -54,7 +54,6 @@ var IDown = {
 		// add class so we don't try again
 		$(ele).addClass('idowned');
 		var img_src = $(ele).attr('src');
-
 		var button_class = "iDownBtn profile";
 		var insertPoint = $(ele).parent();
 		var button_html = '<a class="' + button_class + '" href="' + img_src + '" download>&#8681</a>';
