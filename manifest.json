@@ -1,6 +1,6 @@
 {
 	"name": "Instagram Downloader",
-	"version": "0.01",
+	"version": "0.05",
 	"manifest_version": 2,
 	"description" : "A basic exension to eliminate the need to inspect to download images from instagram",
 	"homepage_url": "https://github.com/phlare/instagram-download-chrome",
