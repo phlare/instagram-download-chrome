@@ -49,6 +49,13 @@ var IDown = {
 		// add class so we don't try again
 		$(ele).addClass('idowned');
 		var img_src = $(ele).attr('src');
+		var img_srcset = $(ele).attr('srcset');
+		if (typeof img_srcset !== 'undefined'){
+			img_srcset = img_srcset.split(" ")[0];
+		}
+		if (typeof img_src == 'undefined' && typeof img_srcset == "string") {
+			img_src = img_srcset;
+		}
 		var button_class = "iDownBtn profile";
 		var insertPoint = $(ele).parent();
 		var button_html = '<a class="' + button_class + '" href="' + img_src + '" download target="_blank">&#8681</a>';
