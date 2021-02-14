@@ -20,7 +20,9 @@
 		"js": ["contentscript.js"],
 		"css": ["idownstyle.css"],
 		"matches": [
-			"*://www.instagram.com/*"
+			"*://www.instagram.com/*",
+			"*://onlyfans.com/*",
+			"*://www.linkedin.com/*"
 		],
 		"run_at": "document_start",
 		"all_frames": true

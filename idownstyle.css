@@ -16,6 +16,12 @@ a.iDownBtn, a.iDownBtn:visited {
 a.iDownBtn.profile {
 	top: 5px;
 	right: 5px;
+	z-index
+}
+a.iDownBtn.onlyfans {
+	top: 10px;
+	right: 51px;
+	z-index: 4001;
 }
 a.iDownBtn:hover {
 	color: #ffffff;
